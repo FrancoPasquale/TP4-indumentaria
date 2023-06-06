@@ -1,0 +1,30 @@
+<form method = "post" action='@Url.Action("GuardarIndumentaria")' >
+<h2>
+    Elige un equipo
+    <select name="Equipo" >
+        @foreach (string item in ViewBag.ListaEquipos)
+        {
+            <option>@item</option>
+        }
+    </select>
+</h2>
+
+<h3>Que remera quieres comprar?</h3>    
+@foreach (string item in ViewBag.ListaRemeras)
+{
+    <input type="radio" value="camisetas" name="camiseta" ><img src="/Jerseys/@item" width="140px" height="140px">
+}
+<h3>Que pantalones quieres comprar?</h3> 
+@foreach (string item in ViewBag.ListaPantalones)
+{
+    <input type="radio" value="pantalones*" name="pantalon"><img src="/Putishorts/@item" width="140px" height="140px">
+}
+<h3>Que medias quieres comprar?</h3>
+@foreach (string item in ViewBag.ListaMedias)
+{
+    <input type="radio" value="medias" name="medias"><img src="/Panties/@item" width="140px" height="140px">
+}
+<br>
+<input type="submit" value="Enviar conjunto" >
+
+</form>
